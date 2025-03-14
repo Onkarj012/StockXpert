@@ -1,13 +1,16 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
-
+import SideNavBar from 'components/SideNavBar';
+import TopNavBar from 'components/TopNavBar';
+import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './global.css';
 
 export default function App() {
   return (
-    <>
-      <ScreenContent title="Home" path="App.tsx" />
-      <StatusBar style="auto" />
-    </>
+    <SafeAreaProvider>
+      <View style={{ flex: 1 }} className="bg-black">
+        <TopNavBar />
+        <SideNavBar />
+      </View>
+    </SafeAreaProvider>
   );
 }
